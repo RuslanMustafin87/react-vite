@@ -1,3 +1,24 @@
-.hello {
-    color: red;
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  display: flex;
+  justify-content: center; /* Центрирование по главной оси (горизонтально по умолчанию) */
+  align-items: center; 
 }
+
+.box-center {
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translateX(-50%) translateY(-50%);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
