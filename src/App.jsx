@@ -1,21 +1,18 @@
+import { ThemeProvider } from './ThemeContext.jsx'
+import { BoxCenter } from './BoxCenter.jsx'
 
-
-import { ThemeProvider  } from './ThemeContext.jsx';
-import { BoxCenter } from './BoxCenter.jsx';
-
-import "./App.scss";
+import './App.scss'
 
 function App() {
-
-  return (
-    <>
-      <div className="container">
-        <ThemeProvider>
-          <BoxCenter />
-        </ThemeProvider>
-      </div>
-    </>
-  )
+	return (
+		<>
+			<ThemeProvider>
+				<div className="container">
+					<BoxCenter />
+				</div>
+			</ThemeProvider>
+		</>
+	)
 }
 
 export default App
