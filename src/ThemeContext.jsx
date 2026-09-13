@@ -1,28 +1,27 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from 'react'
 
-const ThemeContext = createContext(null);
+const ThemeContext = createContext(null)
 
-export function ThemeProvider({children}) {
+export function ThemeProvider({ children }) {
+	let [theme, setTheme] = useState({backGround: '#feeac7', color: '#432818'})
 
-    let [theme, setTheme] = useState("red");
+	useEffect(() => {
+		document.querySelector('.container').style.cssText = `background-color: ${theme.backGround}; color: ${theme.color}`
+	}, [theme])
 
-    const thoggleTheme = () => {
-        
-        // theme === "light" ? setTheme("dark") : setTheme("light");
-        setTheme((prev) => prev === 'red' ? 'green' : 'red' )
-    } 
+	const toggleTheme = () => {
+		setTheme((prev) => (prev.backGround === '#feeac7' ? {backGround: '#432818', color: '#feeac7'} : {backGround: '#feeac7', color: '#432818'} ))
+	}
 
-    return (
-        <ThemeContext value={{theme, thoggleTheme}}>
-            {children}
-        </ThemeContext>
-    )
+	return (
+		<ThemeContext value={{ theme, toggleTheme }}>{children}</ThemeContext>
+	)
 }
 
-export function useTheme(){
-    const context = useContext(ThemeContext)
-    if (!context) {
-        throw new Error("useTheme &&& должен использоваться внутри ThemeProvider");   
-    }
-    return context
+export function useTheme() {
+	const context = useContext(ThemeContext)
+	if (!context) {
+		throw new Error('useTheme должен использоваться внутри ThemeProvider')
+	}
+	return context
 }

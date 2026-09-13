@@ -1,7 +1,17 @@
 .person {
     display: flex;
+    &__left {
+        width: 30%;
+    }
+    &__right {
+        padding-left: 5%;
+        width: 70%;
+    }
 }
 
 .avatar {
     border-radius: 50%;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
 }

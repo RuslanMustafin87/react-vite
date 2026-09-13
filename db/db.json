@@ -1,0 +1,41 @@
+{
+	"data": {
+		"data": [
+			{
+				"id": "1",
+				"avatar": "https://img.magnific.com/free-photo/expressive-redhead-bearded-man_176420-32277.jpg",
+				"email": "fox.malder@reqres.in",
+				"first_name": "Fox",
+				"last_name": "Malder"
+			},
+			{
+				"id": "2",
+				"avatar": "https://img.magnific.com/free-photo/cheerful-good-looking-young-woman-wearing-white-shirt-with-blonde-hair-smiling-pleasantly-while-receiving-some-positive-news-pretty-girl-looking-with-joyful-smile_176420-13579.jpg?semt=ais_hybrid&w=740&q=80",
+				"email": "dana.skalli@reqres.in",
+				"first_name": "Dana",
+				"last_name": "Skalli"
+			},
+			{
+				"id": "3",
+				"avatar": "https://img.magnific.com/free-photo/portrait-blond-smiling-woman-holding-hands-clenched-together-ready-help-looking-friendly-cute-your-service-standing-white-wall_176420-39394.jpg",
+				"email": "janet.weaver@reqres.in",
+				"first_name": "Janet",
+				"last_name": "Weaver"
+			},
+			{
+				"id": "4",
+				"avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBO8wvgdrlqW0RIg9l0eWovSZtPpEEyOMvX-GWGIOs80iYR-pXk57EAmsfdOPfvRMeLPZWO7GsR8zXWl2MWaTCBazw6TiSIB9k0Qv7KWRqxA&s=10",
+				"email": "jack.louden@reqres.in",
+				"first_name": "Jack",
+				"last_name": "Louden"
+			},
+			{
+				"id": "5",
+				"avatar": "https://img.magnific.com/premium-psd/portrait-smiling-young-woman-with-curly-hair-glasses_1101090-14586.jpg",
+				"email": "tanya.miller@reqres.in",
+				"first_name": "Tanya",
+				"last_name": "Miller"
+			}
+		]
+	}
+}

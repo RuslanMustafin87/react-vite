@@ -1,34 +1,50 @@
-import { useEffect, useState } from 'react';
-import Spinner from "./Spinner.jsx";
-import Person from './Person.jsx';
-import { useTheme } from './ThemeContext.jsx';
+import { useEffect, useState } from 'react'
+import Spinner from './Spinner.jsx'
+import Person from './Person.jsx'
+import { useTheme } from './ThemeContext.jsx'
 
-import './BoxCenter.scss';
+import './BoxCenter.scss'
 
-export function BoxCenter(){
-      const [people, setPeople] = useState({});
-      const {theme, thoggleTheme} = useTheme()
-    
-      useEffect(() => {
-        fetch("https://reqres.in/api/users?delay=1.5")
-          .then( response => response.json())
-          .then( data => setPeople(data))
-          .catch(() => console.log("Нет данных"))
-      },[])
+export function BoxCenter() {
+	const [people, setPeople] = useState({})
+	const { theme, toggleTheme } = useTheme()
 
+	useEffect(() => {
+		fetch('http://localhost:3000/data')
+			.then((response) => response.json())
+			.then((data) => {
+				console.log('l')
+				console.log(data)
+				setPeople(data)
+			})
+			.catch((e) => console.log(e))
+	}, [])
 
-      return (
-            <div className="box-center">       
-              {
-                people.data ? 
-                  <ul style={{backgroundColor: theme}}> {people.data.map((item) => (
-                    <li key={item.id}>
-                        <Person avatar={item.avatar} first_name={item.first_name} last_name={item.last_name} email={item.email}/>
-                    </li>))} 
-                  </ul> 
-                : <Spinner /> 
-                }
-                <button onClick={thoggleTheme}>Push</button>
-            </div>
-      )
+	// people.data = [
+	// 	{id: 1, first_name: 'nnn2', last_name: 'ttt' },
+	// 	{id: 2, first_name: 'sadqwed', last_name: 'sss' },
+	// ]
+
+	return (
+		<div className="box-center">
+			{people?.data ? (
+				<ul style={{ backgroundColor: theme }}>
+					{' '}
+					{people.data.map((item) => (
+						<li key={item.id}>
+							<Person
+								avatar={item.avatar}
+								first_name={item.first_name}
+								last_name={item.last_name}
+								email={item.email}
+							/>
+						</li>
+					))}
+				</ul>
+			) : (
+				<Spinner />
+			)}
+			<button onClick={toggleTheme}>Push</button>
+		</div>
+	)
 }
