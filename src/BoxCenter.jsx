@@ -7,7 +7,7 @@ import './BoxCenter.scss'
 
 export function BoxCenter() {
 	const [people, setPeople] = useState({})
-	const { theme, toggleTheme } = useTheme()
+	const { theme } = useTheme()
 
 	useEffect(() => {
 		fetch('http://localhost:3000/data')
@@ -19,11 +19,6 @@ export function BoxCenter() {
 			})
 			.catch((e) => console.log(e))
 	}, [])
-
-	// people.data = [
-	// 	{id: 1, first_name: 'nnn2', last_name: 'ttt' },
-	// 	{id: 2, first_name: 'sadqwed', last_name: 'sss' },
-	// ]
 
 	return (
 		<div className="box-center">
@@ -44,7 +39,6 @@ export function BoxCenter() {
 			) : (
 				<Spinner />
 			)}
-			<button onClick={toggleTheme}>Push</button>
 		</div>
 	)
 }
